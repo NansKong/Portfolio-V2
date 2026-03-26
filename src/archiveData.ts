@@ -1,6 +1,3 @@
-// Curated archive — real projects only, sorted by year descending
-// Excludes: valentines, roseday, personal/tutorial repos
-
 export type ArchiveProject = {
   year: number;
   title: string;
