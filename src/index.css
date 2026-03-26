@@ -1,0 +1,225 @@
+@import "tailwindcss";
+
+@theme {
+  --color-*: initial;
+
+  /* Exact pittanychiang colors */
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+  --color-teal-300: #5eead4;
+  --color-teal-400: #2dd4bf;
+
+  --font-sans: 'Inter', 'Calibri', system-ui, sans-serif;
+  --font-mono: 'Fira Code', 'Fira Mono', 'Courier New', monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: #0f172a;
+  color: #94a3b8;
+  font-family: var(--font-sans);
+  line-height: 1.5;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0f172a; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #5eead4; }
+
+/* Selection */
+::selection {
+  background: rgba(94, 234, 212, 0.15);
+  color: #5eead4;
+}
+
+/* ─── Two-column Layout ─────────────────────────── */
+@media (min-width: 1024px) {
+  [data-layout="two-col"] {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+  }
+  [data-layout="sidebar"] {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 45%;
+    max-width: 480px;
+    flex-shrink: 0;
+  }
+  [data-layout="content"] {
+    flex: 1;
+  }
+}
+
+/* ─── Card List: Hover Dim Effect ───────────────── */
+/*
+ * When hovering ANY card inside .card-list,
+ * dim ALL cards to 40% EXCEPT the hovered one.
+ */
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.card-list:hover .card-outer {
+  opacity: 0.4;
+}
+
+.card-list .card-outer:hover {
+  opacity: 1 !important;
+}
+
+/* Card hover background reveal */
+.card-outer {
+  position: relative;
+  border-radius: 8px;
+  padding: 20px;
+  transition: opacity 0.3s ease;
+  cursor: default;
+}
+
+.card-bg-hover {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: rgba(148, 163, 184, 0.05);
+  border: 1px solid rgba(148, 163, 184, 0.08);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.card-outer:hover .card-bg-hover {
+  opacity: 1;
+}
+
+/* Card title color change on hover */
+.card-outer:hover .card-title {
+  color: #5eead4 !important;
+}
+
+.card-outer:hover .card-title-link {
+  color: #5eead4 !important;
+}
+
+/* Arrow icon slide animation */
+.card-outer:hover .arrow-icon {
+  transform: translate(2px, -2px);
+}
+
+/* Resume link hover */
+.resume-link:hover {
+  color: #5eead4 !important;
+}
+
+/* GitHub icon fade-in on project card hover */
+.card-outer:hover .github-icon {
+  opacity: 1 !important;
+  color: #5eead4 !important;
+  transform: translateY(-2px);
+}
+
+.github-icon {
+  transition: opacity 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+/* ─── Archive Table ─────────────────────────────── */
+.archive-row {
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+  transition: background 0.2s ease;
+}
+
+.archive-row:last-child {
+  border-bottom: none;
+}
+
+.archive-row:hover {
+  background: rgba(148, 163, 184, 0.05);
+}
+
+.archive-row:hover .archive-title {
+  color: #5eead4 !important;
+}
+
+.archive-back-btn:hover {
+  gap: 12px !important;
+}
+
+/* ─── Portal Animations (A Portal to Tomorrow) ────── */
+.portal-orb {
+  --deg: 1;
+  --x: -50%;
+  --y: -50%;
+  --speed: 150ms;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(var(--x, -50%), var(--y, -50%)) rotate(0deg);
+  font-size: 25vmin; /* Increased from 20vmin for larger orb */
+  width: 3.5em; /* Increased from 3em */
+  height: 3.5em; /* Increased from 3em */
+  border-radius: 90% 95% 85% 105%;
+  background: #0f0;
+  mix-blend-mode: screen;
+  filter: hue-rotate(0deg) blur(4px); /* Added blur for smoother effect */
+  animation: portal-wobble calc(var(--speed) * var(--t)) linear infinite;
+  transform-origin: -var(--y) -var(--x);
+  box-shadow: 0 0 0.8em 0.4em #0f172a inset, 0 0 0.25em 0 #fff; /* Increased box-shadow glow */
+}
+
+.portal-orb:nth-child(1) { --x: -53%; --y: -53%; --t: 37; }
+.portal-orb:nth-child(2) { --x: -47%; --y: -52%; --t: 58; }
+.portal-orb:nth-child(3) { --x: -45%; --y: -50%; --t: 46; }
+.portal-orb:nth-child(4) { --x: -53%; --y: -45%; --t: 72; }
+.portal-orb:nth-child(5) { --x: -55%; --y: -45%; --t: 62; }
+
+@keyframes portal-wobble {
+  to {
+    filter: hue-rotate(360deg);
+    transform: translate(var(--x), var(--y)) rotate(360deg);
+  }
+}
+
+.star-wars-perspective {
+  perspective: 400px;
+}
+.star-wars-skew {
+  transform: matrix3d(1, 0, 0, 0, 0, 0.906308, 0.422618, 0, 0, -0.422618, 0.906308, 0, 0, -42.2618, 90.6308, 1);
+  transform-origin: center center;
+}
+
+/* Circular Orbit Motion for TARDIS */
+@keyframes tardis-orbit {
+  0% { transform: rotate(0deg) translateX(4px) rotate(0deg) translateY(0); }
+  25% { transform: rotate(90deg) translateX(4px) rotate(-90deg) translateY(-2px); }
+  50% { transform: rotate(180deg) translateX(4px) rotate(-180deg) translateY(0); }
+  75% { transform: rotate(270deg) translateX(4px) rotate(-270deg) translateY(2px); }
+  100% { transform: rotate(360deg) translateX(4px) rotate(-360deg) translateY(0); }
+}
+.orbit-motion {
+  animation: tardis-orbit 6s linear infinite;
+}
