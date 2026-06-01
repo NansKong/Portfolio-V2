@@ -42,15 +42,77 @@ body {
 }
 
 /* Scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #0f172a; }
-::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #5eead4; }
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5eead4;
+}
 
 /* Selection */
 ::selection {
   background: rgba(94, 234, 212, 0.15);
   color: #5eead4;
+}
+
+/* ─── Responsive Layout Wrappers ──────────────── */
+.layout-wrapper {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.sidebar-container {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.content-container {
+  padding-top: 0;
+  padding-bottom: 48px;
+}
+
+.content-section {
+  margin-bottom: 64px;
+  scroll-margin-top: 64px;
+}
+
+@media (min-width: 768px) {
+  .layout-wrapper {
+    padding-left: 48px;
+    padding-right: 40px;
+  }
+
+  .content-section {
+    margin-bottom: 96px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .layout-wrapper {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  .sidebar-container,
+  .content-container {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+
+  .content-section {
+    margin-bottom: 144px;
+    scroll-margin-top: 96px;
+  }
 }
 
 /* ─── Two-column Layout ─────────────────────────── */
@@ -60,6 +122,7 @@ body {
     flex-direction: row;
     gap: 0;
   }
+
   [data-layout="sidebar"] {
     position: sticky;
     top: 0;
@@ -68,16 +131,13 @@ body {
     max-width: 480px;
     flex-shrink: 0;
   }
+
   [data-layout="content"] {
     flex: 1;
   }
 }
 
-/* ─── Card List: Hover Dim Effect ───────────────── */
-/*
- * When hovering ANY card inside .card-list,
- * dim ALL cards to 40% EXCEPT the hovered one.
- */
+
 .card-list {
   display: flex;
   flex-direction: column;
@@ -179,23 +239,52 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(var(--x, -50%), var(--y, -50%)) rotate(0deg);
-  font-size: 25vmin; /* Increased from 20vmin for larger orb */
-  width: 3.5em; /* Increased from 3em */
-  height: 3.5em; /* Increased from 3em */
+  font-size: 25vmin;
+  /* Increased from 20vmin for larger orb */
+  width: 3.5em;
+  /* Increased from 3em */
+  height: 3.5em;
+  /* Increased from 3em */
   border-radius: 90% 95% 85% 105%;
   background: #0f0;
   mix-blend-mode: screen;
-  filter: hue-rotate(0deg) blur(4px); /* Added blur for smoother effect */
+  filter: hue-rotate(0deg) blur(4px);
+  /* Added blur for smoother effect */
   animation: portal-wobble calc(var(--speed) * var(--t)) linear infinite;
   transform-origin: -var(--y) -var(--x);
-  box-shadow: 0 0 0.8em 0.4em #0f172a inset, 0 0 0.25em 0 #fff; /* Increased box-shadow glow */
+  box-shadow: 0 0 0.8em 0.4em #0f172a inset, 0 0 0.25em 0 #fff;
+  /* Increased box-shadow glow */
 }
 
-.portal-orb:nth-child(1) { --x: -53%; --y: -53%; --t: 37; }
-.portal-orb:nth-child(2) { --x: -47%; --y: -52%; --t: 58; }
-.portal-orb:nth-child(3) { --x: -45%; --y: -50%; --t: 46; }
-.portal-orb:nth-child(4) { --x: -53%; --y: -45%; --t: 72; }
-.portal-orb:nth-child(5) { --x: -55%; --y: -45%; --t: 62; }
+.portal-orb:nth-child(1) {
+  --x: -53%;
+  --y: -53%;
+  --t: 37;
+}
+
+.portal-orb:nth-child(2) {
+  --x: -47%;
+  --y: -52%;
+  --t: 58;
+}
+
+.portal-orb:nth-child(3) {
+  --x: -45%;
+  --y: -50%;
+  --t: 46;
+}
+
+.portal-orb:nth-child(4) {
+  --x: -53%;
+  --y: -45%;
+  --t: 72;
+}
+
+.portal-orb:nth-child(5) {
+  --x: -55%;
+  --y: -45%;
+  --t: 62;
+}
 
 @keyframes portal-wobble {
   to {
@@ -207,6 +296,7 @@ body {
 .star-wars-perspective {
   perspective: 400px;
 }
+
 .star-wars-skew {
   transform: matrix3d(1, 0, 0, 0, 0, 0.906308, 0.422618, 0, 0, -0.422618, 0.906308, 0, 0, -42.2618, 90.6308, 1);
   transform-origin: center center;
@@ -214,12 +304,27 @@ body {
 
 /* Circular Orbit Motion for TARDIS */
 @keyframes tardis-orbit {
-  0% { transform: rotate(0deg) translateX(4px) rotate(0deg) translateY(0); }
-  25% { transform: rotate(90deg) translateX(4px) rotate(-90deg) translateY(-2px); }
-  50% { transform: rotate(180deg) translateX(4px) rotate(-180deg) translateY(0); }
-  75% { transform: rotate(270deg) translateX(4px) rotate(-270deg) translateY(2px); }
-  100% { transform: rotate(360deg) translateX(4px) rotate(-360deg) translateY(0); }
+  0% {
+    transform: rotate(0deg) translateX(4px) rotate(0deg) translateY(0);
+  }
+
+  25% {
+    transform: rotate(90deg) translateX(4px) rotate(-90deg) translateY(-2px);
+  }
+
+  50% {
+    transform: rotate(180deg) translateX(4px) rotate(-180deg) translateY(0);
+  }
+
+  75% {
+    transform: rotate(270deg) translateX(4px) rotate(-270deg) translateY(2px);
+  }
+
+  100% {
+    transform: rotate(360deg) translateX(4px) rotate(-360deg) translateY(0);
+  }
 }
+
 .orbit-motion {
   animation: tardis-orbit 6s linear infinite;
 }

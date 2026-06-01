@@ -10,6 +10,18 @@ export const archiveProjects: ArchiveProject[] = [
   // 2026
   {
     year: 2026,
+    title: "Unusual Mobility Behaviour Detection",
+    tech: ["Python", "YOLOv8", "VideoMAE", "HDBSCAN", "DeepSORT"],
+    github: "https://github.com/NansKong/Unusual-Mobility-Behaviour-Detection-",
+  },
+  {
+    year: 2026,
+    title: "Smart Farmer Advisory Chatbot",
+    tech: ["Python", "FAISS", "GPT-4", "Streamlit", "LangChain"],
+    github: "https://github.com/alenso0/smart-farmer-advisory-chatbot",
+  },
+  {
+    year: 2026,
     title: "ASCII Image Generator",
     tech: ["Python", "PIL", "CLI"],
     github: "https://github.com/NansKong/ASCII-Image-Generator",

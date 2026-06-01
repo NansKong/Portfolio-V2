@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import Header from "./components/Header";
 import About from "./components/About";
 import Skills from "./components/Skills";
@@ -66,25 +67,26 @@ function HomePage() {
       />
 
       <div
-        style={{ position: "relative", zIndex: 1, maxWidth: "1280px", margin: "0 auto", padding: "0 24px" }}
+        style={{ position: "relative", zIndex: 1, maxWidth: "1280px", margin: "0 auto" }}
+        className="layout-wrapper"
         data-layout="two-col"
       >
         {/* LEFT sidebar */}
-        <div data-layout="sidebar" style={{ padding: "96px 0" }}>
+        <div data-layout="sidebar" className="sidebar-container">
           <Header activeSection={activeSection} />
         </div>
 
         {/* RIGHT content */}
-        <main data-layout="content" style={{ paddingTop: "96px", paddingBottom: "96px" }}>
+        <main data-layout="content" className="content-container">
           {[
             { id: "about", Component: About },
             { id: "skills", Component: Skills },
             { id: "experience", Component: Experience },
+            { id: "projects", Component: Projects },
             { id: "education", Component: Education },
             { id: "certificates", Component: Certificates },
-            { id: "projects", Component: Projects },
           ].map(({ id, Component }) => (
-            <section key={id} id={id} style={{ marginBottom: "144px", scrollMarginTop: "96px" }}>
+            <section key={id} id={id} className="content-section">
               <Component />
             </section>
           ))}

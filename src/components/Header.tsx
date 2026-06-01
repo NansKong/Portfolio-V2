@@ -4,9 +4,9 @@ const navLinks = [
   { id: "about", label: "About" },
   { id: "skills", label: "Skills" },
   { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
   { id: "education", label: "Education" },
   { id: "certificates", label: "Certificates" },
-  { id: "projects", label: "Projects" },
 ];
 
 interface Props {

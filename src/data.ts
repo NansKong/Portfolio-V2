@@ -127,6 +127,23 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Unusual Mobility Behaviour Detection",
+    description:
+      "An unsupervised ML pipeline for detecting unusual mobility behaviour in security surveillance video. Fuses geometric trajectory features with deep spatiotemporal VideoMAE embeddings, clustered via HDBSCAN for anomaly scoring — no labelled data required.",
+    tech: ["Python", "YOLOv8", "VideoMAE", "HDBSCAN", "DeepSORT"],
+    github: "https://github.com/NansKong/Unusual-Mobility-Behaviour-Detection-",
+    label: "COMPUTER VISION",
+  },
+  {
+    title: "Smart Farmer Advisory Chatbot",
+    description:
+      "A RAG-powered multilingual agricultural advisory chatbot for Indian farmers. Combines curated knowledge retrieval (FAISS + multilingual embeddings), real-time weather context, and hallucination-controlled LLM responses in Hindi, English, and Hinglish.",
+    tech: ["Python", "FAISS", "GPT-4", "Streamlit", "LangChain"],
+    github: "https://github.com/alenso0/smart-farmer-advisory-chatbot",
+    label: "NLP / RAG",
+    image: "/nlp.png"
+  },
+  {
     title: "BharatAI",
     description:
       "A production-grade AI-powered opportunity platform connecting Indian students with internships, jobs, and grants. Full-stack system with FastAPI, PostgreSQL, Redis, Celery task queues, an InCoScore ranking algorithm, and a React frontend.",
@@ -134,23 +151,6 @@ export const projects: Project[] = [
     github: "https://github.com/NansKong/BharatAI",
     label: "AI PLATFORM",
     image: "/bharatai.png",
-  },
-  {
-    title: "Meetings Transcription Automation",
-    description:
-      "Fully automated pipeline that records, transcribes, and summarizes meeting audio using Whisper and GPT. Integrates with n8n for end-to-end workflow orchestration — auto-sending summaries and action items to participants.",
-    tech: ["Python", "Whisper", "GPT-4", "n8n", "Automation"],
-    github:
-      "https://github.com/NansKong/meetings-transcription-automation",
-    label: "TRANSCRIPTION",
-  },
-  {
-    title: "Diabetes Prediction Model",
-    description:
-      "A machine learning pipeline for clinical diabetes risk prediction. Covers full data preprocessing, feature engineering, model training, evaluation, and a Flask API for serving predictions — built for real-world interpretability and accuracy.",
-    tech: ["Python", "Scikit-Learn", "Pandas", "Flask", "ML"],
-    github: "https://github.com/NansKong/Diabetes-Prediction-Model",
-    label: "ML MODEL",
   },
   {
     title: "3D Portfolio Website",

@@ -14,9 +14,9 @@ export default function Education() {
         {education.map((item, i) => (
           <div key={i} className="card-outer">
             <div className="card-bg-hover" />
-            <div style={{ position: "relative", display: "flex", gap: "24px" }}>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 relative">
               {/* Date */}
-              <div style={{ flexShrink: 0, width: "140px", paddingTop: "4px" }}>
+              <div className="shrink-0 sm:w-[140px] pt-1">
                 <span style={{ fontSize: "0.6875rem", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "#64748b" }}>
                   {item.dates}
                 </span>
