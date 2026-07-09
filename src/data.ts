@@ -26,15 +26,15 @@ export const skills = [
   },
   {
     title: "AI & Machine Learning",
-    items: ["PyTorch", "TensorFlow", "Scikit-Learn", "Pandas", "NumPy", "Generative AI", "LangChain", "NLP", "Transformers", "Computer Vision"],
+    items: ["PyTorch", "TensorFlow", "Deep Learning", "Scikit-Learn", "Pandas", "NumPy", "Generative AI", "LangChain", "NLP", "Transformers", "Computer Vision"],
   },
   {
     title: "Web Technologies",
     items: ["React", "Next.js", "Node.js", "Express.js", "Tailwind CSS", "FastAPI", "Django", "Flask", "React Router"],
   },
   {
-    title: "Databases & Tools",
-    items: ["PostgreSQL", "MongoDB", "MySQL", "Docker", "Git", "AWS"],
+    title: "Databases, Cloud & Tools",
+    items: ["PostgreSQL", "MongoDB", "MySQL", "Docker", "Git", "AWS", "Vercel"],
   },
 ];
 
