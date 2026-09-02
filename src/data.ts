@@ -5,19 +5,19 @@ export const hero = {
     "AI & Python Developer building intelligent, scalable systems — from ML models to production-ready APIs. I turn complex data into reliable, explainable solutions that drive real-world impact.",
   email: "krudrax16@gmail.com",
   resumeUrl:
-    "https://drive.google.com/file/d/1o3J1R6fWFTtGQbzrdFhDQFoVP6x26Q08/view?usp=sharing",
+    "https://drive.google.com/file/d/18ms0gopDwlhe_ljHMxO86cyrHELTla9p/view?usp=sharing",
   github: "https://github.com/NansKong",
   linkedin: "https://www.linkedin.com/in/rudrax-kongbrailatpam/",
   medium: "https://medium.com/@krudrax16",
 };
 
-export const about = `I'm an AI/ML engineer and Python developer who enjoys building intelligent systems that actually work outside of research papers and notebooks.
+export const about = `I'm an AI/ML Engineer who builds intelligent systems — not just models. I work across the full stack of machine learning: research, system design, data engineering, model training, and production deployment.
 
-Most of what I do revolves around turning machine learning ideas into real, usable products. I like working on the entire pipeline — from cleaning and preparing data to training models, building APIs, and deploying systems that people can interact with.
+My work spans multiple domains — from training open-source language models for low-resource languages to building pharmacovigilance pipelines, automated outreach systems, and agentic AI tools. I approach problems with a research mindset: I read papers, run experiments, measure outcomes, and iterate until the system actually works.
 
-Over time, I've worked on projects like multi-label clinical risk prediction systems, machine learning models, and LLM-powered automation tools. What excites me most is figuring out how to take complex ML concepts and turn them into practical applications that solve real problems.
+What drives me is bridging the gap between research and production. I'm not content with a model that only performs well in a notebook — I want it running reliably in real environments, serving real users, and generating real value. That means building the pipelines, APIs, infrastructure, and automation layers around it too.
 
-Alongside AI, I also build backend systems and automation tools that connect APIs, databases, and cloud infrastructure. I enjoy creating systems that are not just smart, but also reliable, scalable, and ready for production.`;
+I'm also deeply interested in low-resource NLP, foundation model development, and AI systems that operate at scale. Whether it's pretraining a 135M-parameter language model from scratch, building a clinical risk prediction system, or automating complex business workflows with LLMs — I build things that matter.`;
 
 export const skills = [
   {
@@ -26,7 +26,11 @@ export const skills = [
   },
   {
     title: "AI & Machine Learning",
-    items: ["PyTorch", "TensorFlow", "Deep Learning", "Scikit-Learn", "Pandas", "NumPy", "Generative AI", "LangChain", "NLP", "Transformers", "Computer Vision"],
+    items: ["PyTorch", "TensorFlow", "Deep Learning", "Scikit-Learn", "Pandas", "NumPy", "Generative AI", "LangChain", "NLP", "Transformers", "Computer Vision", "HuggingFace", "RLHF", "Fine-Tuning", "RAG"],
+  },
+  {
+    title: "Research & Tooling",
+    items: ["Jupyter", "Weights & Biases", "FAISS", "Replicate", "OpenAI API", "Jinja2", "n8n", "Airtable"],
   },
   {
     title: "Web Technologies",
@@ -34,28 +38,28 @@ export const skills = [
   },
   {
     title: "Databases, Cloud & Tools",
-    items: ["PostgreSQL", "MongoDB", "MySQL", "Docker", "Git", "AWS", "Vercel"],
+    items: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Docker", "Git", "AWS", "Vercel", "Celery"],
   },
 ];
 
 export const experience = [
   {
     dates: "2025 — Present",
-    title: "AI/ML Developer",
+    title: "AI/ML Engineer",
     company: "Freelance",
     companyUrl: "",
     description:
-      "Design and deploy end-to-end machine learning pipelines and LLM-powered tools for real-world automation. Build production-ready APIs and backend services integrating AI models with cloud infrastructure.",
-    tech: ["Python", "FastAPI", "LangChain", "PostgreSQL", "Docker"],
+      "Design and deploy end-to-end machine learning pipelines, LLM-powered tools, and agentic AI systems for real-world automation. Build production-ready APIs, backend services, and data engineering pipelines integrating AI models with cloud infrastructure. Projects span pharmacovigilance, business outreach, NLP, and agentic workflows.",
+    tech: ["Python", "FastAPI", "LangChain", "PostgreSQL", "Docker", "HuggingFace", "Replicate"],
   },
   {
     dates: "2023 — Present",
-    title: "Full-Stack Developer",
-    company: "Personal Projects",
+    title: "AI Systems Developer",
+    company: "Personal Research Projects",
     companyUrl: "",
     description:
-      "Built multiple full-stack applications combining React frontends with Python backends. Focused on performance, scalability, and clean architecture with modern tooling.",
-    tech: ["React", "TypeScript", "Node.js", "Vite", "Tailwind CSS"],
+      "Research and build AI systems across low-resource NLP, foundation model pretraining, computer vision, and intelligent automation. Designed and trained ManipuriGPT (135M parameters) from scratch, built clinical risk prediction systems, and developed multi-pipeline ML architectures for production use.",
+    tech: ["PyTorch", "Transformers", "HuggingFace", "Python", "NLP", "Computer Vision"],
   },
   {
     dates: "Jun' 25 — Jul' 25",
@@ -94,6 +98,13 @@ export const education = [
 
 export const certificates = [
   {
+    name: "Real World Machine Learning & AI: Scratch to Impact",
+    issuer: "Fifth Force",
+    date: "2025",
+    verifyLink: "https://drive.google.com/file/d/1LK8fJ4YjczLGj0oC_SXENW2nuCXobZzO/view?usp=sharing",
+    tags: ["Machine Learning", "AI", "Deep Learning"],
+  },
+  {
     name: "Introduction to Artificial Intelligence",
     issuer: "Infosys Springboard / Coursera",
     date: "2024",
@@ -127,12 +138,44 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "ManipuriGPT — Foundational Language Model",
+    description:
+      "A research-grade open foundation language model for Manipuri (Meitei), a low-resource language. Trained a 135M-parameter GPT-style model from scratch using a custom corpus engineered from 147k sequences, a 32K-vocabulary tokenizer with 91% utilization, and a full SFT instruction-tuning pipeline with 30k ChatML records. Published to HuggingFace.",
+    tech: ["PyTorch", "HuggingFace", "Python", "NLP", "Tokenization", "SFT"],
+    github: "https://github.com/NansKong/ManipuriGPT-Foundational-Language-",
+    label: "NLP RESEARCH",
+  },
+  {
+    title: "Phera — Pharmacovigilance Pipeline",
+    description:
+      "A production-grade automated pharmacovigilance reporting system (PADER generation). Features an 8-step pipeline: data ingestion → deterministic analysis → LLM narrative generation → 6-layer automated validation → Jinja2 template rendering → final PDF. Processes 1,024 adverse drug reaction cases with MedDRA compliance.",
+    tech: ["Python", "LLM", "Jinja2", "Replicate", "YAML", "Data Pipelines"],
+    github: "https://github.com/NansKong/Phera",
+    label: "AI PIPELINE",
+  },
+  {
+    title: "Automated Startup Outreach System",
+    description:
+      "An agentic AI system that autonomously identifies newly registered Indian startups, enriches their profiles through live web scraping, scores opportunity gaps, and generates personalised cold-email pitches at scale. Implements a 6-stage pipeline with compliance, suppression DB, human-in-the-loop review, and multi-touch follow-up cadences.",
+    tech: ["Python", "LLM", "Web Scraping", "FastAPI", "PostgreSQL", "Agentic AI"],
+    github: "https://github.com/NansKong/Automated-Startup-Outreach-System",
+    label: "AGENTIC AI",
+  },
+  {
     title: "Unusual Mobility Behaviour Detection",
     description:
       "An unsupervised ML pipeline for detecting unusual mobility behaviour in security surveillance video. Fuses geometric trajectory features with deep spatiotemporal VideoMAE embeddings, clustered via HDBSCAN for anomaly scoring — no labelled data required.",
     tech: ["Python", "YOLOv8", "VideoMAE", "HDBSCAN", "DeepSORT"],
     github: "https://github.com/NansKong/Unusual-Mobility-Behaviour-Detection-",
     label: "COMPUTER VISION",
+  },
+  {
+    title: "Manipuri Corpus v1.0",
+    description:
+      "A research-grade, deduplicated Manipuri language corpus engineered for training foundation models. 11-phase data pipeline covering OCR (Tesseract multi-script), quality scoring, MinHash/SimHash deduplication, JSONL→Parquet conversion, and HuggingFace dataset publishing with train/val/test splits and a formal dataset card.",
+    tech: ["Python", "Tesseract OCR", "HuggingFace", "NLP", "Data Engineering"],
+    github: "https://github.com/NansKong/Manipuri_Corpus",
+    label: "DATA ENGINEERING",
   },
   {
     title: "Smart Farmer Advisory Chatbot",
@@ -151,6 +194,14 @@ export const projects: Project[] = [
     github: "https://github.com/NansKong/BharatAI",
     label: "AI PLATFORM",
     image: "/bharatai.png",
+  },
+  {
+    title: "Food-Dzzz — Campus Food Pre-Order Bot",
+    description:
+      "A Telegram bot system that lets students at LPU pre-order food from college canteens and restaurants, drastically reducing wait times and counter traffic. Handles order queuing, slot management, and canteen notifications.",
+    tech: ["Python", "Telegram Bot API", "FastAPI", "SQLite"],
+    github: "https://github.com/NansKong/Food-Dzzz",
+    label: "AUTOMATION",
   },
   {
     title: "3D Portfolio Website",
