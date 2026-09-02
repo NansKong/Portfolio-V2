@@ -95,8 +95,8 @@ export default function Header({ activeSection }: Props) {
         </nav>
       </div>
 
-      {/* Social icons */}
-      <div style={{ display: "flex", alignItems: "center", gap: "20px", marginTop: "32px" }}>
+      {/* Social icons — order: GitHub, LinkedIn, Medium, HuggingFace, Email */}
+      <div style={{ display: "flex", alignItems: "center", gap: "20px", marginTop: "32px", flexWrap: "wrap" }}>
         <SocialLink href={hero.github} label="GitHub">
           <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: "22px", height: "22px" }}>
             <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
@@ -112,6 +112,13 @@ export default function Header({ activeSection }: Props) {
         <SocialLink href={hero.medium} label="Medium">
           <svg viewBox="0 0 24 24" fill="currentColor" style={{ width: "22px", height: "22px" }}>
             <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+          </svg>
+        </SocialLink>
+
+        <SocialLink href={hero.huggingface} label="HuggingFace">
+          {/* HuggingFace logo — simplified face icon */}
+          <svg viewBox="0 0 95 88" fill="currentColor" style={{ width: "22px", height: "22px" }}>
+            <path d="M47.5 0C21.3 0 0 19.7 0 44s21.3 44 47.5 44S95 68.3 95 44 73.7 0 47.5 0zm0 8c20.7 0 37.5 16.1 37.5 36s-16.8 36-37.5 36S10 64 10 44 26.8 8 47.5 8zM33 28a5 5 0 100 10A5 5 0 0033 28zm29 0a5 5 0 100 10A5 5 0 0062 28zM28 50c0 1.7 1.4 3 3 3h2.3c1.2 3.9 4.8 6.5 9.2 7.6C44 62.1 45.7 63 47.5 63s3.5-.9 5-2.4c4.4-1.1 8-3.7 9.2-7.6H64c1.6 0 3-1.3 3-3s-1.4-3-3-3H31c-1.6 0-3 1.3-3 3z"/>
           </svg>
         </SocialLink>
 

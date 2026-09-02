@@ -10,6 +10,48 @@ export const archiveProjects: ArchiveProject[] = [
   // 2026
   {
     year: 2026,
+    title: "Automated Startup Outreach System",
+    tech: ["Python", "LLM", "Web Scraping", "FastAPI", "PostgreSQL", "Agentic AI"],
+    github: "https://github.com/NansKong/Automated-Startup-Outreach-System",
+  },
+  {
+    year: 2026,
+    title: "Phera — Pharmacovigilance Pipeline",
+    tech: ["Python", "LLM", "Jinja2", "Replicate", "YAML", "Data Pipelines"],
+    github: "https://github.com/NansKong/Phera",
+  },
+  {
+    year: 2026,
+    title: "Manipuri Corpus v1.0",
+    tech: ["Python", "Tesseract OCR", "HuggingFace", "NLP", "Data Engineering"],
+    github: "https://github.com/NansKong/Manipuri_Corpus",
+  },
+  {
+    year: 2026,
+    title: "ManipuriGPT — Foundational Language Model",
+    tech: ["PyTorch", "HuggingFace", "Python", "NLP", "Tokenization", "SFT"],
+    github: "https://github.com/NansKong/ManipuriGPT-Foundational-Language-",
+  },
+  {
+    year: 2026,
+    title: "Food-Dzzz — Campus Food Pre-Order Bot",
+    tech: ["Python", "Telegram Bot API", "FastAPI", "SQLite"],
+    github: "https://github.com/NansKong/Food-Dzzz",
+  },
+  {
+    year: 2026,
+    title: "Nepali Data Pipeline",
+    tech: ["Python", "Jupyter Notebook", "NLP", "Data Engineering"],
+    github: "https://github.com/NansKong/Nepali-data-pipeline",
+  },
+  {
+    year: 2026,
+    title: "LeetCode Solver & Coach",
+    tech: ["Python", "LLM", "Automation"],
+    github: "https://github.com/NansKong/LeetCode---Solver-Coach",
+  },
+  {
+    year: 2026,
     title: "Research Desk - AI Investment Research Agent",
     tech: ["Python", "LangChain", "LangGraph", "Replicate API", "AI Agents"],
     github: "https://github.com/NansKong/investment-research-agent",
@@ -25,6 +67,18 @@ export const archiveProjects: ArchiveProject[] = [
     title: "Smart Farmer Advisory Chatbot",
     tech: ["Python", "FAISS", "GPT-4", "Streamlit", "LangChain"],
     github: "https://github.com/alenso0/smart-farmer-advisory-chatbot",
+  },
+  {
+    year: 2026,
+    title: "GeoAtlas",
+    tech: ["Python", "GIS", "Data Visualization"],
+    github: "https://github.com/NansKong/GeoAtlas",
+  },
+  {
+    year: 2026,
+    title: "GPT Model (from Scratch)",
+    tech: ["Python", "PyTorch", "Jupyter Notebook", "NLP"],
+    github: "https://github.com/NansKong/GPTmodel",
   },
   {
     year: 2026,
@@ -58,12 +112,6 @@ export const archiveProjects: ArchiveProject[] = [
   },
   {
     year: 2026,
-    title: "Automated Startup Outreach System",
-    tech: ["Python", "n8n", "AI", "Automation"],
-    github: "https://github.com/NansKong/Automated-Startup-Outreach-System",
-  },
-  {
-    year: 2026,
     title: "Meetings Transcription Automation",
     tech: ["Python", "Whisper", "GPT-4", "n8n"],
     github: "https://github.com/NansKong/meetings-transcription-automation",
@@ -73,6 +121,12 @@ export const archiveProjects: ArchiveProject[] = [
     title: "Upwork Job Automation (n8n)",
     tech: ["n8n", "AI", "Airtable", "Automation"],
     github: "https://github.com/NansKong/upwork-automation-n8n",
+  },
+  {
+    year: 2026,
+    title: "3D Portfolio Website",
+    tech: ["React", "Three.js", "TypeScript", "Vite", "Tailwind CSS"],
+    github: "https://github.com/NansKong/Rudrax-Portfolio",
   },
   // 2025
   {

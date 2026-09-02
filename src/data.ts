@@ -5,9 +5,10 @@ export const hero = {
     "AI & Python Developer building intelligent, scalable systems — from ML models to production-ready APIs. I turn complex data into reliable, explainable solutions that drive real-world impact.",
   email: "krudrax16@gmail.com",
   resumeUrl:
-    "https://drive.google.com/file/d/18ms0gopDwlhe_ljHMxO86cyrHELTla9p/view?usp=sharing",
+    "https://drive.google.com/file/d/18ms0gopDwlhe_ljHMxO86cyrHELTla9p/view?usp=drive_link",
   github: "https://github.com/NansKong",
   linkedin: "https://www.linkedin.com/in/rudrax-kongbrailatpam/",
+  huggingface: "https://huggingface.co/nanskong",
   medium: "https://medium.com/@krudrax16",
 };
 
@@ -154,37 +155,12 @@ export const projects: Project[] = [
     label: "AI PIPELINE",
   },
   {
-    title: "Automated Startup Outreach System",
-    description:
-      "An agentic AI system that autonomously identifies newly registered Indian startups, enriches their profiles through live web scraping, scores opportunity gaps, and generates personalised cold-email pitches at scale. Implements a 6-stage pipeline with compliance, suppression DB, human-in-the-loop review, and multi-touch follow-up cadences.",
-    tech: ["Python", "LLM", "Web Scraping", "FastAPI", "PostgreSQL", "Agentic AI"],
-    github: "https://github.com/NansKong/Automated-Startup-Outreach-System",
-    label: "AGENTIC AI",
-  },
-  {
     title: "Unusual Mobility Behaviour Detection",
     description:
       "An unsupervised ML pipeline for detecting unusual mobility behaviour in security surveillance video. Fuses geometric trajectory features with deep spatiotemporal VideoMAE embeddings, clustered via HDBSCAN for anomaly scoring — no labelled data required.",
     tech: ["Python", "YOLOv8", "VideoMAE", "HDBSCAN", "DeepSORT"],
     github: "https://github.com/NansKong/Unusual-Mobility-Behaviour-Detection-",
     label: "COMPUTER VISION",
-  },
-  {
-    title: "Manipuri Corpus v1.0",
-    description:
-      "A research-grade, deduplicated Manipuri language corpus engineered for training foundation models. 11-phase data pipeline covering OCR (Tesseract multi-script), quality scoring, MinHash/SimHash deduplication, JSONL→Parquet conversion, and HuggingFace dataset publishing with train/val/test splits and a formal dataset card.",
-    tech: ["Python", "Tesseract OCR", "HuggingFace", "NLP", "Data Engineering"],
-    github: "https://github.com/NansKong/Manipuri_Corpus",
-    label: "DATA ENGINEERING",
-  },
-  {
-    title: "Smart Farmer Advisory Chatbot",
-    description:
-      "A RAG-powered multilingual agricultural advisory chatbot for Indian farmers. Combines curated knowledge retrieval (FAISS + multilingual embeddings), real-time weather context, and hallucination-controlled LLM responses in Hindi, English, and Hinglish.",
-    tech: ["Python", "FAISS", "GPT-4", "Streamlit", "LangChain"],
-    github: "https://github.com/alenso0/smart-farmer-advisory-chatbot",
-    label: "NLP / RAG",
-    image: "/nlp.png"
   },
   {
     title: "BharatAI",
@@ -194,22 +170,5 @@ export const projects: Project[] = [
     github: "https://github.com/NansKong/BharatAI",
     label: "AI PLATFORM",
     image: "/bharatai.png",
-  },
-  {
-    title: "Food-Dzzz — Campus Food Pre-Order Bot",
-    description:
-      "A Telegram bot system that lets students at LPU pre-order food from college canteens and restaurants, drastically reducing wait times and counter traffic. Handles order queuing, slot management, and canteen notifications.",
-    tech: ["Python", "Telegram Bot API", "FastAPI", "SQLite"],
-    github: "https://github.com/NansKong/Food-Dzzz",
-    label: "AUTOMATION",
-  },
-  {
-    title: "3D Portfolio Website",
-    description:
-      "A modern, immersive 3D portfolio built with React, Three.js, and Vite. Features an animated liquid-ether background, glassmorphism UI, smooth scroll sections, and a skills marquee. Designed to wow at first glance.",
-    tech: ["React", "Three.js", "TypeScript", "Vite", "Tailwind CSS"],
-    github: "https://github.com/NansKong/Rudrax-Portfolio",
-    label: "Portfolio V1",
-    image: "/v1.png",
   },
 ];
