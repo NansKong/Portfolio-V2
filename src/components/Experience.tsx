@@ -80,7 +80,7 @@ export default function Experience() {
       {/* View Resume link */}
       <div className="mt-8 sm:ml-[164px]">
         <a
-          href="https://drive.google.com/file/d/1MdgbmltCP5zdGfO1ndUq7rpFRyZF8WyA/view?usp=sharing"
+          href="https://drive.google.com/file/d/18ms0gopDwlhe_ljHMxO86cyrHELTla9p/view?usp=drive_link"
           target="_blank"
           rel="noopener noreferrer"
           className="resume-link"
