@@ -49,8 +49,8 @@ function ExternalLinkIcon() {
   );
 }
 
-function LivePreview({ url, title }: { url: string; title: string }) {
-  const containerRef = useRef<HTMLDivElement>(null);
+function LivePreview({ url, title, href }: { url: string; title: string; href: string }) {
+  const containerRef = useRef<HTMLAnchorElement>(null);
   const [scale, setScale] = useState(0.125);
 
   useEffect(() => {
@@ -73,14 +73,18 @@ function LivePreview({ url, title }: { url: string; title: string }) {
   }, []);
 
   return (
-    <div
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={`Open ${title} live website`}
       ref={containerRef}
-      className="relative w-32 sm:w-full aspect-[16/9] rounded border-[2px] border-slate-200/10 transition-colors duration-300 group-hover:border-slate-200/30 overflow-hidden bg-slate-900 drop-shadow-sm group-hover:drop-shadow-md sm:translate-y-1"
+      className="group/preview block relative w-32 sm:w-full aspect-[16/9] rounded border-[2px] border-slate-200/10 hover:border-teal-300/60 focus-visible:border-teal-300/80 transition-all duration-300 hover:scale-[1.04] hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(94,234,212,0.25)] overflow-hidden bg-slate-900 drop-shadow-sm sm:translate-y-1 cursor-pointer"
     >
       <iframe
         src={url}
         title={`${title} live preview`}
-        className="absolute top-0 left-0 origin-top-left pointer-events-none select-none"
+        className="absolute top-0 left-0 origin-top-left pointer-events-none select-none transition-transform duration-500"
         style={{
           width: "1280px",
           height: "720px",
@@ -91,7 +95,16 @@ function LivePreview({ url, title }: { url: string; title: string }) {
         tabIndex={-1}
         aria-hidden="true"
       />
-    </div>
+      {/* Dark overlay with "Live Site ↗" pill on hover */}
+      <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/preview:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1.5px] pointer-events-none">
+        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-semibold tracking-wide bg-slate-900/90 text-teal-300 border border-teal-300/40 shadow-lg transform translate-y-1 group-hover/preview:translate-y-0 transition-transform duration-300">
+          Live Site
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style={{ width: "12px", height: "12px" }}>
+            <path fillRule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clipRule="evenodd" />
+          </svg>
+        </span>
+      </div>
+    </a>
   );
 }
 
@@ -159,16 +172,36 @@ export default function Projects() {
               {/* Left Column (Live Preview, Image or Badge) */}
               <div className="sm:order-1 sm:col-span-2 pt-1 z-10 shrink-0 mb-4 sm:mb-0">
                 {project.livePreview ? (
-                  <LivePreview url={project.livePreview} title={project.title} />
-                ) : project.image ? (
-                  <img
-                    src={project.image}
-                    alt={`${project.title} thumbnail`}
-                    loading="lazy"
-                    width="200"
-                    height="112"
-                    className="rounded border-[2px] border-slate-200/10 transition-colors duration-300 group-hover:border-slate-200/30 object-cover sm:w-full sm:translate-y-1 w-32 aspect-[16/9] drop-shadow-sm group-hover:drop-shadow-md"
+                  <LivePreview
+                    url={project.livePreview}
+                    title={project.title}
+                    href={project.demo || project.github}
                   />
+                ) : project.image ? (
+                  <a
+                    href={project.demo || project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Open ${project.title}`}
+                    className="group/img block relative w-32 sm:w-full aspect-[16/9] rounded border-[2px] border-slate-200/10 hover:border-teal-300/60 focus-visible:border-teal-300/80 transition-all duration-300 hover:scale-[1.04] hover:-translate-y-1 hover:shadow-[0_8px_25px_rgba(94,234,212,0.25)] overflow-hidden bg-slate-900 drop-shadow-sm sm:translate-y-1 cursor-pointer"
+                  >
+                    <img
+                      src={project.image}
+                      alt={`${project.title} thumbnail`}
+                      loading="lazy"
+                      width="200"
+                      height="112"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1.5px] pointer-events-none">
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-semibold tracking-wide bg-slate-900/90 text-teal-300 border border-teal-300/40 shadow-lg transform translate-y-1 group-hover/img:translate-y-0 transition-transform duration-300">
+                        {project.demo ? "Live Site" : "View Code"}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style={{ width: "12px", height: "12px" }}>
+                          <path fillRule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clipRule="evenodd" />
+                        </svg>
+                      </span>
+                    </div>
+                  </a>
                 ) : (
                   <span style={{
                     fontSize: "0.625rem",
