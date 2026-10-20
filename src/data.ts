@@ -176,7 +176,7 @@ export const projects: Project[] = [
     github: "https://github.com/NansKong/GeoAtlas",
     demo: "https://geoatlas-live.vercel.app",
     livePreview: "https://geoatlas-live.vercel.app",
-    label: "LIVE PLATFORM",
+    label: "GEOSPATIAL PLATFORM",
   },
   {
     title: "Virtual Photobooth Retro",
@@ -186,7 +186,7 @@ export const projects: Project[] = [
     github: "https://github.com/NansKong",
     demo: "https://photoboothretro.vercel.app",
     livePreview: "https://photoboothretro.vercel.app",
-    label: "LIVE WEBRTC",
+    label: "WEBRTC PLATFORM",
   },
   {
     title: "Research Desk — AI Investment Research Agent",
@@ -196,7 +196,7 @@ export const projects: Project[] = [
     github: "https://github.com/NansKong/investment-research-agent",
     demo: "https://researchdesk-pi.vercel.app/",
     livePreview: "https://researchdesk-pi.vercel.app/",
-    label: "LIVE AGENT",
+    label: "AGENTIC AI",
   },
   {
     title: "Saarthi — Verified Grounded Adaptive Multimodal Tutor",

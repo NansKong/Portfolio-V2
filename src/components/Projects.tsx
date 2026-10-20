@@ -95,15 +95,6 @@ function LivePreview({ url, title, href }: { url: string; title: string; href: s
         tabIndex={-1}
         aria-hidden="true"
       />
-      {/* Dark overlay with "Live Site ↗" pill on hover */}
-      <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/preview:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1.5px] pointer-events-none">
-        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-semibold tracking-wide bg-slate-900/90 text-teal-300 border border-teal-300/40 shadow-lg transform translate-y-1 group-hover/preview:translate-y-0 transition-transform duration-300">
-          Live Site
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style={{ width: "12px", height: "12px" }}>
-            <path fillRule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clipRule="evenodd" />
-          </svg>
-        </span>
-      </div>
     </a>
   );
 }
@@ -193,14 +184,6 @@ export default function Projects() {
                       height="112"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
                     />
-                    <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[1.5px] pointer-events-none">
-                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-semibold tracking-wide bg-slate-900/90 text-teal-300 border border-teal-300/40 shadow-lg transform translate-y-1 group-hover/img:translate-y-0 transition-transform duration-300">
-                        {project.demo ? "Live Site" : "View Code"}
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" style={{ width: "12px", height: "12px" }}>
-                          <path fillRule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clipRule="evenodd" />
-                        </svg>
-                      </span>
-                    </div>
                   </a>
                 ) : (
                   <span style={{
