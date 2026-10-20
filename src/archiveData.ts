@@ -87,6 +87,7 @@ export const archiveProjects: ArchiveProject[] = [
     title: "Research Desk - AI Investment Research Agent",
     tech: ["Python", "LangChain", "LangGraph", "Replicate API", "AI Agents"],
     github: "https://github.com/NansKong/investment-research-agent",
+    demo: "https://researchdesk-pi.vercel.app/",
   },
   {
     year: 2026,

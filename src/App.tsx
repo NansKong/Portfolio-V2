@@ -7,6 +7,7 @@ import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
 import Certificates from "./components/Certificates";
+import Research from "./components/Research";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import ArchivePage from "./pages/ArchivePage";
@@ -82,6 +83,7 @@ function HomePage() {
             { id: "about", Component: About },
             { id: "skills", Component: Skills },
             { id: "experience", Component: Experience },
+            { id: "research", Component: Research },
             { id: "projects", Component: Projects },
             { id: "education", Component: Education },
             { id: "certificates", Component: Certificates },

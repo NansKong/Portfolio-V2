@@ -1,3 +1,4 @@
+import { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { projects } from "../data";
 import { SectionHeader } from "./About";
@@ -45,6 +46,52 @@ function ExternalLinkIcon() {
       <polyline points="15 3 21 3 21 9" />
       <line x1="10" y1="14" x2="21" y2="3" />
     </svg>
+  );
+}
+
+function LivePreview({ url, title }: { url: string; title: string }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(0.125);
+
+  useEffect(() => {
+    const updateScale = () => {
+      if (containerRef.current) {
+        const width = containerRef.current.clientWidth;
+        if (width > 0) {
+          setScale(width / 1280);
+        }
+      }
+    };
+    updateScale();
+    const ro = new ResizeObserver(updateScale);
+    if (containerRef.current) ro.observe(containerRef.current);
+    window.addEventListener("resize", updateScale);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", updateScale);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={containerRef}
+      className="relative w-32 sm:w-full aspect-[16/9] rounded border-[2px] border-slate-200/10 transition-colors duration-300 group-hover:border-slate-200/30 overflow-hidden bg-slate-900 drop-shadow-sm group-hover:drop-shadow-md sm:translate-y-1"
+    >
+      <iframe
+        src={url}
+        title={`${title} live preview`}
+        className="absolute top-0 left-0 origin-top-left pointer-events-none select-none"
+        style={{
+          width: "1280px",
+          height: "720px",
+          transform: `scale(${scale})`,
+          border: "none",
+        }}
+        loading="lazy"
+        tabIndex={-1}
+        aria-hidden="true"
+      />
+    </div>
   );
 }
 
@@ -109,9 +156,11 @@ export default function Projects() {
                 </div>
               </div>
 
-              {/* Left Column (Image or Badge) */}
+              {/* Left Column (Live Preview, Image or Badge) */}
               <div className="sm:order-1 sm:col-span-2 pt-1 z-10 shrink-0 mb-4 sm:mb-0">
-                {project.image ? (
+                {project.livePreview ? (
+                  <LivePreview url={project.livePreview} title={project.title} />
+                ) : project.image ? (
                   <img
                     src={project.image}
                     alt={`${project.title} thumbnail`}

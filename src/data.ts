@@ -136,25 +136,26 @@ export interface Project {
   label: string;
   image?: string;
   demo?: string;
+  livePreview?: string;
 }
 
-export const projects: Project[] = [
+export interface ResearchItem {
+  title: string;
+  description: string;
+  tech: string[];
+  github: string;
+  label: string;
+  demo?: string;
+}
+
+export const research: ResearchItem[] = [
   {
-    title: "Saarthi — Verified Grounded Adaptive Multimodal Tutor",
+    title: "HAFT — Adversarial Robustness for Hindi Fact-Checking",
     description:
-      "A verified grounded adaptive multimodal AI tutoring platform. Built with a 4-pod zero-overlap architecture featuring multimodal ingestion (Whisper + PDF/PPTX), concept prerequisite DAG graphs, hybrid BM25 + Qdrant dense retrieval with confidence-gated citations, Dual-LLM + SymPy question verification, and Bayesian Knowledge Tracing (BKT) with diagnostic backward-walk.",
-    tech: ["FastAPI", "Next.js", "Python", "Qdrant", "BM25", "BKT", "SymPy", "Whisper"],
-    github: "https://github.com/NansKong/Saarthi-A-Verified-Grounded-Adaptive-Tutor",
-    label: "AI TUTOR & EDTECH",
-  },
-  {
-    title: "GeoAtlas — Global Intelligence Platform",
-    description:
-      "A production global geospatial intelligence platform streaming real-time market data and multi-source news ingestion. Engineered with FastAPI, Celery background workers, Redis AOF caching, on-VM PostgreSQL 17, and a Next.js 14 frontend, reverse-proxied via Caddy with automated SSL on an Oracle Cloud ARM VM.",
-    tech: ["Next.js", "FastAPI", "Oracle Cloud", "Docker", "PostgreSQL", "Redis", "Celery"],
-    github: "https://github.com/NansKong/GeoAtlas",
-    demo: "https://geoatlas-live.vercel.app",
-    label: "LIVE PLATFORM",
+      "An empirical adversarial robustness benchmark (1,120 claims, 22 attacks, 18,304 clean-verified evaluations) and Leave-One-Out calibrated feasibility predictor (90.91% acc) for Devanagari Hindi automated fact-checking, submitted to NAACL. Features fine-tuned IndicBERTv2, transfer audits on Llama 3 70B, and coverage-aware auditing policies.",
+    tech: ["Python", "PyTorch", "NLP", "Transformers", "Adversarial ML", "Llama 3"],
+    github: "https://github.com/NansKong/HAFT-Adversarial-Robustness-Benchmarking-for-Hindi-Fact-Checking-with-Adaptive-Attack-Selection-",
+    label: "NAACL SUBMISSION",
   },
   {
     title: "ManipuriGPT — Foundational Language Model",
@@ -162,15 +163,48 @@ export const projects: Project[] = [
       "A research-grade open foundation language model for Manipuri (Meitei), a low-resource language. Trained a 135M-parameter GPT-style model from scratch using a custom corpus engineered from 147k sequences, a 32K-vocabulary tokenizer with 91% utilization, and a full SFT instruction-tuning pipeline with 30k ChatML records. Published to HuggingFace.",
     tech: ["PyTorch", "HuggingFace", "Python", "NLP", "Tokenization", "SFT"],
     github: "https://github.com/NansKong/ManipuriGPT-Foundational-Language-",
-    label: "NLP RESEARCH",
+    label: "FOUNDATION MODEL",
+  },
+];
+
+export const projects: Project[] = [
+  {
+    title: "GeoAtlas — Global Intelligence Platform",
+    description:
+      "A production global geospatial intelligence platform streaming real-time market data and multi-source news ingestion. Engineered with FastAPI, Celery background workers, Redis AOF caching, on-VM PostgreSQL 17, and a Next.js 14 frontend, reverse-proxied via Caddy with automated SSL on an Oracle Cloud ARM VM.",
+    tech: ["Next.js", "FastAPI", "Oracle Cloud", "Docker", "PostgreSQL", "Redis", "Celery"],
+    github: "https://github.com/NansKong/GeoAtlas",
+    demo: "https://geoatlas-live.vercel.app",
+    livePreview: "https://geoatlas-live.vercel.app",
+    label: "LIVE PLATFORM",
   },
   {
-    title: "HAFT — Adversarial Robustness for Hindi Fact-Checking",
+    title: "Virtual Photobooth Retro",
     description:
-      "An empirical adversarial robustness benchmark (1,120 claims, 22 attacks, 18,304 clean-verified evaluations) and Leave-One-Out calibrated feasibility predictor (90.91% acc) for Devanagari Hindi automated fact-checking, submitted to NAACL. Features fine-tuned IndicBERTv2, transfer audits on Llama 3 70B, and coverage-aware auditing policies.",
-    tech: ["Python", "PyTorch", "NLP", "Transformers", "Adversarial ML", "Llama 3"],
-    github: "https://github.com/NansKong/HAFT-Adversarial-Robustness-Benchmarking-for-Hindi-Fact-Checking-with-Adaptive-Attack-Selection-",
-    label: "AI RESEARCH",
+      "A retro-styled interactive virtual photobooth featuring real-time WebRTC multi-peer video streaming, custom canvas filters, dynamic sticker placement, photo strip composition, and automated download sharing.",
+    tech: ["Next.js", "WebRTC", "React", "Node.js", "Canvas API", "Tailwind CSS"],
+    github: "https://github.com/NansKong",
+    demo: "https://photoboothretro.vercel.app",
+    livePreview: "https://photoboothretro.vercel.app",
+    label: "LIVE WEBRTC",
+  },
+  {
+    title: "Research Desk — AI Investment Research Agent",
+    description:
+      "An autonomous financial research agent utilizing LangChain, LangGraph, and financial data tools to evaluate equities, synthesize market reports, and generate institutional investment memos in real time.",
+    tech: ["TypeScript", "LangChain", "LangGraph", "Replicate API", "AI Agents", "React"],
+    github: "https://github.com/NansKong/investment-research-agent",
+    demo: "https://researchdesk-pi.vercel.app/",
+    livePreview: "https://researchdesk-pi.vercel.app/",
+    label: "LIVE AGENT",
+  },
+  {
+    title: "Saarthi — Verified Grounded Adaptive Multimodal Tutor",
+    description:
+      "A verified grounded adaptive multimodal AI tutoring platform. Built with a 4-pod zero-overlap architecture featuring multimodal ingestion (Whisper + PDF/PPTX), concept prerequisite DAG graphs, hybrid BM25 + Qdrant dense retrieval with confidence-gated citations, Dual-LLM + SymPy question verification, and Bayesian Knowledge Tracing (BKT) with diagnostic backward-walk.",
+    tech: ["FastAPI", "Next.js", "Python", "Qdrant", "BM25", "BKT", "SymPy", "Whisper"],
+    github: "https://github.com/NansKong/Saarthi-A-Verified-Grounded-Adaptive-Tutor",
+    label: "AI TUTOR & EDTECH",
   },
   {
     title: "Phera — Pharmacovigilance Pipeline",
