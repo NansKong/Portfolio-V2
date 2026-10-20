@@ -29,6 +29,25 @@ function GitHubIcon() {
   );
 }
 
+function ExternalLinkIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      style={{ width: "16px", height: "16px" }}
+    >
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+      <polyline points="15 3 21 3 21 9" />
+      <line x1="10" y1="14" x2="21" y2="3" />
+    </svg>
+  );
+}
+
 export default function Projects() {
   const navigate = useNavigate();
 
@@ -47,7 +66,7 @@ export default function Projects() {
                 <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "4px" }}>
                   <h3 style={{ fontSize: "0.9375rem", fontWeight: 600, lineHeight: 1.4, flex: 1 }}>
                     <a
-                      href={project.github}
+                      href={project.demo || project.github}
                       target="_blank"
                       rel="noreferrer"
                       className="card-title-link"
@@ -57,16 +76,30 @@ export default function Projects() {
                       <ArrowUpRight />
                     </a>
                   </h3>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="GitHub Repository"
-                    className="github-icon"
-                    style={{ marginLeft: "12px", color: "#64748b", flexShrink: 0, transition: "color 0.2s, transform 0.2s", opacity: 0 }}
-                  >
-                    <GitHubIcon />
-                  </a>
+                  <div style={{ display: "flex", alignItems: "center", gap: "10px", marginLeft: "12px", flexShrink: 0 }}>
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label="Live Demo"
+                        className="live-icon"
+                        style={{ color: "#64748b", transition: "color 0.2s, transform 0.2s", opacity: 0 }}
+                      >
+                        <ExternalLinkIcon />
+                      </a>
+                    )}
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="GitHub Repository"
+                      className="github-icon"
+                      style={{ color: "#64748b", transition: "color 0.2s, transform 0.2s", opacity: 0 }}
+                    >
+                      <GitHubIcon />
+                    </a>
+                  </div>
                 </div>
                 <p style={{ marginBottom: "12px", fontSize: "0.875rem", lineHeight: 1.75, color: SLATE_400 }}>
                   {project.description}

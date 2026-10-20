@@ -10,6 +10,25 @@ export const archiveProjects: ArchiveProject[] = [
   // 2026
   {
     year: 2026,
+    title: "Saarthi — Verified Grounded Adaptive Multimodal Tutor",
+    tech: ["Python", "FastAPI", "Next.js", "Qdrant", "BM25", "SymPy", "BKT"],
+    github: "https://github.com/NansKong/Saarthi-A-Verified-Grounded-Adaptive-Tutor",
+  },
+  {
+    year: 2026,
+    title: "HAFT — Adversarial Robustness Benchmarking for Hindi Fact-Checking",
+    tech: ["Python", "PyTorch", "NLP", "Adversarial ML", "Transformers"],
+    github: "https://github.com/NansKong/HAFT-Adversarial-Robustness-Benchmarking-for-Hindi-Fact-Checking-with-Adaptive-Attack-Selection-",
+  },
+  {
+    year: 2026,
+    title: "GeoAtlas — Global Geospatial Intelligence Platform",
+    tech: ["FastAPI", "Next.js", "Docker", "PostgreSQL", "Redis", "Celery", "Oracle Cloud"],
+    github: "https://github.com/NansKong/GeoAtlas",
+    demo: "https://geoatlas-live.vercel.app",
+  },
+  {
+    year: 2026,
     title: "Automated Startup Outreach System",
     tech: ["Python", "LLM", "Web Scraping", "FastAPI", "PostgreSQL", "Agentic AI"],
     github: "https://github.com/NansKong/Automated-Startup-Outreach-System",
@@ -34,9 +53,22 @@ export const archiveProjects: ArchiveProject[] = [
   },
   {
     year: 2026,
+    title: "BharatAI — AI Opportunity Platform",
+    tech: ["FastAPI", "PostgreSQL", "Redis", "Celery", "React"],
+    github: "https://github.com/NansKong/BharatAI",
+  },
+  {
+    year: 2026,
     title: "Food-Dzzz — Campus Food Pre-Order Bot",
     tech: ["Python", "Telegram Bot API", "FastAPI", "SQLite"],
     github: "https://github.com/NansKong/Food-Dzzz",
+  },
+  {
+    year: 2026,
+    title: "Virtual Photobooth Retro",
+    tech: ["Next.js", "WebRTC", "Node.js", "Render", "Tailwind CSS"],
+    github: "https://github.com/NansKong",
+    demo: "https://photoboothretro.vercel.app",
   },
   {
     year: 2026,
@@ -70,12 +102,6 @@ export const archiveProjects: ArchiveProject[] = [
   },
   {
     year: 2026,
-    title: "GeoAtlas",
-    tech: ["Python", "GIS", "Data Visualization"],
-    github: "https://github.com/NansKong/GeoAtlas",
-  },
-  {
-    year: 2026,
     title: "GPT Model (from Scratch)",
     tech: ["Python", "PyTorch", "Jupyter Notebook", "NLP"],
     github: "https://github.com/NansKong/GPTmodel",
@@ -91,12 +117,6 @@ export const archiveProjects: ArchiveProject[] = [
     title: "LeetCode Problem Solver Bot",
     tech: ["Python", "LLM", "Automation"],
     github: "https://github.com/NansKong/Leetcode-Problem-Solver-Bot",
-  },
-  {
-    year: 2026,
-    title: "BharatAI",
-    tech: ["FastAPI", "PostgreSQL", "Redis", "Celery", "React"],
-    github: "https://github.com/NansKong/BharatAI",
   },
   {
     year: 2026,
@@ -127,6 +147,7 @@ export const archiveProjects: ArchiveProject[] = [
     title: "3D Portfolio Website",
     tech: ["React", "Three.js", "TypeScript", "Vite", "Tailwind CSS"],
     github: "https://github.com/NansKong/Rudrax-Portfolio",
+    demo: "https://rudraxkongbrailatpam-v1.vercel.app/",
   },
   // 2025
   {
@@ -153,6 +174,12 @@ export const archiveProjects: ArchiveProject[] = [
     tech: ["Python", "Pandas", "Matplotlib", "SQL"],
     github: "https://github.com/NansKong/Walmart-sales-analysis",
   },
+  {
+    year: 2025,
+    title: "Roseday Interactive Creative",
+    tech: ["CSS", "HTML", "JavaScript"],
+    github: "https://github.com/NansKong/roseday",
+  },
   // 2024
   {
     year: 2024,
@@ -160,12 +187,48 @@ export const archiveProjects: ArchiveProject[] = [
     tech: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/NansKong/Sustainable-Website",
   },
+  {
+    year: 2024,
+    title: "Unclickable Button Interaction",
+    tech: ["JavaScript", "HTML", "CSS"],
+    github: "https://github.com/NansKong/unclickable-button",
+  },
   // 2023
   {
     year: 2023,
     title: "SnazzyBites — Food Ordering App",
     tech: ["React", "JavaScript", "CSS"],
     github: "https://github.com/NansKong/SnazzyBites",
+  },
+  {
+    year: 2023,
+    title: "Capstone-2 Engineering Project",
+    tech: ["Python", "Software Engineering"],
+    github: "https://github.com/NansKong/Capstone-2",
+  },
+  {
+    year: 2023,
+    title: "Capstone-1 Engineering Project",
+    tech: ["HTML", "CSS", "JavaScript"],
+    github: "https://github.com/NansKong/Capstone-1",
+  },
+  {
+    year: 2023,
+    title: "Personal Portfolio v0",
+    tech: ["HTML", "CSS", "JavaScript"],
+    github: "https://github.com/NansKong/My-Portfolio",
+  },
+  {
+    year: 2023,
+    title: "Mobile & Core Application Workspace",
+    tech: ["Python", "App Development"],
+    github: "https://github.com/NansKong/App",
+  },
+  {
+    year: 2023,
+    title: "Idiots Project",
+    tech: ["HTML", "CSS", "JavaScript"],
+    github: "https://github.com/NansKong/Idiots",
   },
 ];
 

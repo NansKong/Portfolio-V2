@@ -135,9 +135,27 @@ export interface Project {
   github: string;
   label: string;
   image?: string;
+  demo?: string;
 }
 
 export const projects: Project[] = [
+  {
+    title: "Saarthi — Verified Grounded Adaptive Multimodal Tutor",
+    description:
+      "A verified grounded adaptive multimodal AI tutoring platform. Built with a 4-pod zero-overlap architecture featuring multimodal ingestion (Whisper + PDF/PPTX), concept prerequisite DAG graphs, hybrid BM25 + Qdrant dense retrieval with confidence-gated citations, Dual-LLM + SymPy question verification, and Bayesian Knowledge Tracing (BKT) with diagnostic backward-walk.",
+    tech: ["FastAPI", "Next.js", "Python", "Qdrant", "BM25", "BKT", "SymPy", "Whisper"],
+    github: "https://github.com/NansKong/Saarthi-A-Verified-Grounded-Adaptive-Tutor",
+    label: "AI TUTOR & EDTECH",
+  },
+  {
+    title: "GeoAtlas — Global Intelligence Platform",
+    description:
+      "A production global geospatial intelligence platform streaming real-time market data and multi-source news ingestion. Engineered with FastAPI, Celery background workers, Redis AOF caching, on-VM PostgreSQL 17, and a Next.js 14 frontend, reverse-proxied via Caddy with automated SSL on an Oracle Cloud ARM VM.",
+    tech: ["Next.js", "FastAPI", "Oracle Cloud", "Docker", "PostgreSQL", "Redis", "Celery"],
+    github: "https://github.com/NansKong/GeoAtlas",
+    demo: "https://geoatlas-live.vercel.app",
+    label: "LIVE PLATFORM",
+  },
   {
     title: "ManipuriGPT — Foundational Language Model",
     description:
@@ -145,6 +163,14 @@ export const projects: Project[] = [
     tech: ["PyTorch", "HuggingFace", "Python", "NLP", "Tokenization", "SFT"],
     github: "https://github.com/NansKong/ManipuriGPT-Foundational-Language-",
     label: "NLP RESEARCH",
+  },
+  {
+    title: "HAFT — Adversarial Robustness for Hindi Fact-Checking",
+    description:
+      "An empirical adversarial robustness benchmark (1,120 claims, 22 attacks, 18,304 clean-verified evaluations) and Leave-One-Out calibrated feasibility predictor (90.91% acc) for Devanagari Hindi automated fact-checking, submitted to NAACL. Features fine-tuned IndicBERTv2, transfer audits on Llama 3 70B, and coverage-aware auditing policies.",
+    tech: ["Python", "PyTorch", "NLP", "Transformers", "Adversarial ML", "Llama 3"],
+    github: "https://github.com/NansKong/HAFT-Adversarial-Robustness-Benchmarking-for-Hindi-Fact-Checking-with-Adaptive-Attack-Selection-",
+    label: "AI RESEARCH",
   },
   {
     title: "Phera — Pharmacovigilance Pipeline",
@@ -155,14 +181,6 @@ export const projects: Project[] = [
     label: "AI PIPELINE",
   },
   {
-    title: "Unusual Mobility Behaviour Detection",
-    description:
-      "An unsupervised ML pipeline for detecting unusual mobility behaviour in security surveillance video. Fuses geometric trajectory features with deep spatiotemporal VideoMAE embeddings, clustered via HDBSCAN for anomaly scoring — no labelled data required.",
-    tech: ["Python", "YOLOv8", "VideoMAE", "HDBSCAN", "DeepSORT"],
-    github: "https://github.com/NansKong/Unusual-Mobility-Behaviour-Detection-",
-    label: "COMPUTER VISION",
-  },
-  {
     title: "BharatAI",
     description:
       "A production-grade AI-powered opportunity platform connecting Indian students with internships, jobs, and grants. Full-stack system with FastAPI, PostgreSQL, Redis, Celery task queues, an InCoScore ranking algorithm, and a React frontend.",
@@ -170,5 +188,13 @@ export const projects: Project[] = [
     github: "https://github.com/NansKong/BharatAI",
     label: "AI PLATFORM",
     image: "/bharatai.png",
+  },
+  {
+    title: "Unusual Mobility Behaviour Detection",
+    description:
+      "An unsupervised ML pipeline for detecting unusual mobility behaviour in security surveillance video. Fuses geometric trajectory features with deep spatiotemporal VideoMAE embeddings, clustered via HDBSCAN for anomaly scoring — no labelled data required.",
+    tech: ["Python", "YOLOv8", "VideoMAE", "HDBSCAN", "DeepSORT"],
+    github: "https://github.com/NansKong/Unusual-Mobility-Behaviour-Detection-",
+    label: "COMPUTER VISION",
   },
 ];
