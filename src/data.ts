@@ -5,7 +5,7 @@ export const hero = {
     "AI & Python Developer building intelligent, scalable systems — from ML models to production-ready APIs. I turn complex data into reliable, explainable solutions that drive real-world impact.",
   email: "krudrax16@gmail.com",
   resumeUrl:
-    "https://drive.google.com/file/d/18ms0gopDwlhe_ljHMxO86cyrHELTla9p/view?usp=drive_link",
+    "https://drive.google.com/file/d/1ec5AAaENdN1BaUuiScZk7T6HSJEO4rMf/view?usp=sharing",
   github: "https://github.com/NansKong",
   linkedin: "https://www.linkedin.com/in/rudrax-kongbrailatpam/",
   huggingface: "https://huggingface.co/nanskong",
